@@ -32,6 +32,7 @@ def build(word):
     # this gets the page text
     data = res.read()
     print(data)
+    return data
 
 @app.route("/")
 def search():
@@ -42,8 +43,7 @@ def display():
     if request.method == 'POST':
         word = request.form['search']
         print(word)
-        build(word)
-        return render_template("display.html", word=word)
+        return render_template("display.html", word=word, data = build(word))
 
 if __name__ == '__main__':
     app.debug = True
