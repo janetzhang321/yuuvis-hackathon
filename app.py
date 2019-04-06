@@ -33,17 +33,17 @@ def build(word):
     data = res.read()
     print(data)
 
-@app.route("/", methods=['POST','GET'])
+@app.route("/")
 def search():
-    build('janet')
     return render_template("index.html")
 
 @app.route("/display", methods=['POST','GET'])
 def display():
-    word = request.form.get('search')
-    print(word)
-    build(word)
-    return render_template("display.html", word=word)
+    if request.method == 'POST':
+        word = request.form['search']
+        print(word)
+        build(word)
+        return render_template("display.html", word=word)
 
 if __name__ == '__main__':
     app.debug = True

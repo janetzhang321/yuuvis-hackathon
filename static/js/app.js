@@ -14,5 +14,5 @@ document.getElementById('my-form').addEventListener("submit", function (e) {
     let myJSON = JSON.stringify(query);
 
     console.log(myJSON)
-    return (myJSON)
+    //return (myJSON)
 });
