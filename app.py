@@ -1,16 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def search():
-    return render_template("search.html")
+    return render_template("index.html")
 
 @app.route("/display", methods=['POST','GET'])
 def display():
-    #first = request.form.get('firstname')
-    last = request.form.get('lastname')
-    return render_template("display.html", first="first", last=last)
-    
+    word = request.form.get('search')
+    print(word)
+    return render_template("display.html", word=word)
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
