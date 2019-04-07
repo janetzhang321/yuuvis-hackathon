@@ -13,7 +13,6 @@ headers = {
 
 #This sets up the https connection
 c = HTTPSConnection("yuuvis.io")
-
 def build(word):
     host = "/api/dms/objects/search"
     payload = {
