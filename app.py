@@ -51,7 +51,7 @@ def display():
 
 @app.route('/app.js')
 def script():
-    return render_template('../static/js/script.js', d=d)
+    return render_template('../static/js/script.js', color = 'pink')
 
 if __name__ == '__main__':
     app.debug = True
