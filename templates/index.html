@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Redline Search</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
-    <link rel="shortcut icon" href="#">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
-    <header>
+    <div class="background">
         <div id="header-title">
-            <h1>Redline Search</h1>
-            <h1>It's like Slack, but cooler!</h1>
+            <h1>Redline Suggestions</h1>
         </div>
-    </header>
-    <div class="search-div">
-        <form action="/display" id="my-form" method="POST">
-        <input type="text" name="search" placeholder="Search Redline / Yuuvis..." class="search-bar">
-        <div class="button">
-            <input class="submit" type="submit"></button>
+        <div class="search-div">
+            <form id="my-form">
+                <input type="text" name="search" placeholder="Search Yuuvis..." class="search-bar">
+                <div class="button">
+                    <input class="submit" type="submit"></button>
+                </div>
+            </form>
         </div>
-    </form>
     </div>
-    <!-- <script src="{{url_for('static', filename='js/app.js') }}"></script> -->
+    <script src="./app.js"></script>
 </body>
+
 </html>
