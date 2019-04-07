@@ -14,5 +14,11 @@ document.getElementById('my-form').addEventListener("submit", function (e) {
     let myJSON = JSON.stringify(query);
 
     console.log(myJSON)
+
+    function myEnterFunction() {
+        element = document.getElementById("demo");
+        element.style.backgroundColor = "{{ d }}";
+    }
+
     //return (myJSON)
 });
