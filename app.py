@@ -23,7 +23,6 @@ def build(word):
             }
     }
     json_load = json.dumps(payload)
-
     c.request('POST', host, json_load, headers = headers)
     #get the response back
     res = c.getresponse()
@@ -35,7 +34,6 @@ def build(word):
     for x in obs:
         print (x,"\n")
     return responseObject
-
 @app.route("/")
 def search():
     return render_template("index.html")
@@ -45,7 +43,6 @@ def display():
     if request.method == 'POST':
         word = request.form['search']
         return render_template("display.html", word=word, data = build(word))
-
 if __name__ == '__main__':
     app.debug = True
     app.run()
