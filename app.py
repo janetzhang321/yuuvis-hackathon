@@ -31,9 +31,18 @@ def build(word):
     data = res.read()
     responseObject = json.loads(data)
     obs = responseObject["objects"]
+    return obs
+
+def parse_dict(d):
     for x in obs:
+<<<<<<< HEAD
         print (x,"\n")
     return responseObject
+=======
+        print(x["properties"]['Name'],x["properties"]['enaio:objectId'],"\n")
+    return d
+
+>>>>>>> 25a8c133b2f495912ba0bd96bf2f00d973781a53
 @app.route("/")
 def search():
     return render_template("index.html")
@@ -43,6 +52,14 @@ def display():
     if request.method == 'POST':
         word = request.form['search']
         return render_template("display.html", word=word, data = build(word))
+<<<<<<< HEAD
+=======
+
+@app.route('/app.js')
+def script():
+    return render_template('../static/js/script.js', d=d)
+
+>>>>>>> 25a8c133b2f495912ba0bd96bf2f00d973781a53
 if __name__ == '__main__':
     app.debug = True
     app.run()
