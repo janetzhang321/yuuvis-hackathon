@@ -1,7 +1,10 @@
 document.getElementById('my-form').addEventListener("submit", function (e) {
     e.preventDefault();
     let searchResult = document.querySelector(".search-bar").value;
-    //console.log(searchResult)
+    
+    document.querySelector(".button").addEventListener("click", () => {
+        body.style.color = "yellow";
+    })
 
     let query={
         "query": {
