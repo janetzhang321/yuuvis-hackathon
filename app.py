@@ -31,8 +31,11 @@ def build(word):
     # at this point you could check the status etc
     # this gets the page text
     data = res.read()
-    print(data)
-    return data
+    responseObject = json.loads(data)
+    obs = responseObject["objects"]
+    for x in obs:
+        print (x,"\n")
+    return responseObject
 
 @app.route("/")
 def search():
@@ -42,7 +45,6 @@ def search():
 def display():
     if request.method == 'POST':
         word = request.form['search']
-        print(word)
         return render_template("display.html", word=word, data = build(word))
 
 if __name__ == '__main__':
